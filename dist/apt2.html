@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parkers Place JC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon-16x16.png"
+      sizes="16x16"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon-32x32.png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="images/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="css/photo-grid-box-vanilla.min.css" />
+    <script src="js/photo-grid-box-vanilla.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/galleria/1.5.7/galleria.min.js"></script>
+    <script src="js/imagelightbox.min.js"></script> -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <link
+      href="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css"
+      type="text/css"
+      rel="stylesheet"
+    />
+    <script
+      src="//cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+
+    <style>
+      .gallery-item {
+        height: 150px;
+        width: 16.66%;
+        cursor: pointer;
+        overflow: hidden;
+        border: 2px solid #1f2937;
+      }
+      .gallery-img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center center;
+        transition: all 0.5s;
+      }
+
+      .gallery-item:hover .gallery-img,
+      .gallery-item:focus .gallery-img {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-800">
+    <header
+      class="center p-5 flex-grow-0 flex-shrink-0 sticky top-0 z-50 bg-white"
+    >
+      <h1 class="font-serif font-bold text-4xl text-center">Apt. 2</h1>
+      <p
+        class="
+          font-sans
+          uppercase
+          text-center text-gray-400
+          tracking-widest
+          text-xs
+        "
+      >
+        Jefferson City, MO
+      </p>
+    </header>
+    <div id="container" class="flex flex-wrap flex-row">
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6675.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6675_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6676.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6676_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6678.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6678_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6679.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6679_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6680.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6680_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6681.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6681_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6682.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6682_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6683.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6683_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6684.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6684_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6685.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6685_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6686.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6686_thumb.jpg')"
+        ></div>
+      </div>
+
+      <div class="gallery-item" data-featherlight="images/gallery/IMG_6687.jpg">
+        <div
+          class="gallery-img"
+          style="background-image: url('images/gallery/img_6687_thumb.jpg')"
+        ></div>
+      </div>
+    </div>
+
+    <main class="flex flex-col md:flex-row p-10">
+      <p
+        class="
+          font-serif
+          text-left text-gray-300
+          w-full
+          md:w-1/2
+          mx-auto
+          leading-8
+        "
+      >
+        Relax and enjoy the finer things in Apartment 2. The master bedroom
+        holds a king size bed, desk and smartTV. The sitting room includes a
+        queen sofa sleeper. The family room is a large, elegant space to gather
+        and relax, with beautiful ceiling work that is over 11' tall. Included
+        is a grand 8' tall viewing mirror. The back sun porch has 150 sq/ft. of
+        great space to store bikes or other travel gear. The kitchen is equipped
+        for anything you'll need during your stay. <br /><br />
+        Connect at Parker's Place.
+      </p>
+      <div class="text-gray-300 mx-auto mt-12 md:mt-0 md:w-1/3">
+        <h2
+          class="
+            uppercase
+            bg-green-700
+            p-2
+            px-16
+            inline-block
+            font-bold
+            tracking-widest
+          "
+        >
+          Contact
+        </h2>
+        <p class="my-3">
+          Text:
+          <a
+            href="sms:+1-573-301-5987"
+            class="text-green-500 hover:underline hover:text-green-300"
+            >(573) 301-5987</a
+          >
+        </p>
+
+        <p class="my-3">
+          Call:
+          <a
+            href="tel:+1-573-301-5987"
+            class="text-green-500 hover:underline hover:text-green-300"
+            >(573) 301-5987</a
+          >
+        </p>
+        <p class="my-3">
+          Email:
+          <a
+            href="mailto:parkersplacejc@gmail.com"
+            class="text-green-500 hover:underline hover:text-green-300"
+            >parkersplacejc@gmail.com</a
+          >
+        </p>
+      </div>
+    </main>
+    <!-- <script>
+      const imgs = [
+        {
+          src: "images/gallery/IMG_6675.jpg",
+          payload: {
+            title: "Image 1",
+          },
+        },
+        {
+          src: "images/gallery/IMG_6676.jpg",
+          payload: {
+            title: "Image 2",
+          },
+        },
+        "images/gallery/IMG_6678.jpg",
+        // more images
+      ];
+
+      const element = document.querySelector("#container");
+      const photoGrid = new PhotoGridBox(element, imgs);
+    </script> -->
+  </body>
+</html>
