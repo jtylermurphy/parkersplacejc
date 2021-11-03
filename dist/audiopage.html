@@ -5,11 +5,67 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Audio Test</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
+      integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css"
+      integrity="sha512-d2x1oQUT6HACW9UlXxWI6XrIBDrEE5z2tit/+kWEdXdVYuift7sm+Q6ucfGWQr1F0+GD9/6eYoYDegw2nm05Vw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .hidden {
+        display: none;
+      }
+
+      .far {
+        font-size: 100px;
+      }
+    </style>
   </head>
   <body>
-    <audio controls autoplay>
+    <!-- <audio controls autoplay hidden muted id="rickrolled">
       <source src="audio/Never_Gonna_Give_You_Up.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
-    </audio>
+    </audio> -->
+
+    <script>
+      function play() {
+        var audio = document.getElementById("audio");
+        var play = document.getElementById("play");
+        var pause = document.getElementById("pause");
+        audio.play();
+        play.classList.add("hidden");
+        pause.classList.remove("hidden");
+      }
+
+      function pause() {
+        var audio = document.getElementById("audio");
+        var play = document.getElementById("play");
+        var pause = document.getElementById("pause");
+        audio.pause();
+        pause.classList.add("hidden");
+        play.classList.remove("hidden");
+      }
+    </script>
+
+    <!-- <input type="button" value="PLAY" onclick="play()" id="play" />
+    <input
+      type="button"
+      value="PAUSE"
+      onclick="pause()"
+      id="pause"
+      class="hidden"
+    /> -->
+    <i class="far fa-play-circle" id="play" onclick="play()"></i>
+    <i class="far fa-pause-circle hidden" id="pause" onclick="pause()"></i>
+
+    <audio id="audio" src="audio/Never_Gonna_Give_You_Up.mp3"></audio>
   </body>
 </html>
