@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./dist/**/*.{html,js}"],
+  content: ["./**/*.{html,js}"],
   media: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
