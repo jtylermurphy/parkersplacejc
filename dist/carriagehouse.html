@@ -47,6 +47,9 @@
       charset="utf-8"
     ></script>
 
+    <script src="https://unpkg.com/htmlincludejs"></script>
+    <script src="htmlincludes.js"></script>
+
     <style>
       .gallery-item {
         height: 150px;
@@ -86,16 +89,20 @@
   </head>
   <body class="bg-gray-800">
     <header
-      class="center p-5 flex-grow-0 flex-shrink-0 sticky top-0 z-50 bg-white"
+      class="bg-white py-6 grid grid-cols-3 items-center sticky top-0 z-50"
     >
-      <h1 class="font-serif font-bold text-4xl text-center">
-        The Carriage House
-      </h1>
-      <p
-        class="font-sans uppercase text-center text-gray-400 tracking-widest text-xs"
-      >
-        at parker's place in Jefferson City, MO.
-      </p>
+      <include src="./navigation.html"></include>
+      <div>
+        <h1 class="font-serif font-bold text-4xl text-center">
+          The Carriage House
+        </h1>
+        <p
+          class="font-sans uppercase text-center text-gray-400 tracking-widest text-xs"
+        >
+          at parker's place in Jefferson City, MO.
+        </p>
+      </div>
+      <include src="social.html"></include>
     </header>
 
     <div>
@@ -271,5 +278,7 @@
       const element = document.querySelector("#container");
       const photoGrid = new PhotoGridBox(element, imgs);
     </script> -->
+
+    <script src="js/dropdown.js"></script>
   </body>
 </html>
