@@ -1,0 +1,93 @@
+<nav class="bg-white">
+  <div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between">
+      <div
+        class="flex items-center justify-center sm:item-stretch sm:justify-start"
+      >
+        <div class="flex flex-shrink-0 items-center">
+          <a href="index.html">
+            <img
+              class="block h-6 w-auto lg:hidden"
+              src="images/parkers-place-circle.svg"
+              alt="Workflow" />
+            <img
+              class="hidden h-6 w-auto lg:block"
+              src="images/parkers-place-circle.svg"
+              alt="Workflow"
+          /></a>
+        </div>
+        <div class="hidden sm:ml-6 sm:block">
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="text-gray-700 uppercase px-2 py-2 text-xs font-medium"
+              aria-current="page"
+              >Home</a
+            >
+            <a
+              href="#"
+              class="text-gray-700 uppercase px-2 py-2 rounded-md text-xs font-medium"
+              aria-current="page"
+              >The History</a
+            >
+            <div class="relative">
+              <button
+                type="button"
+                class="text-gray-700 uppercase px-2 py-2 rounded-md text-xs font-medium"
+                id="accommodations-menu-button"
+              >
+                The Accommodations
+              </button>
+              <div
+                class="absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="user-menu-button"
+                tabindex="-1"
+              >
+                <!-- Active: "bg-gray-100", Not Active: "" -->
+                <a
+                  href="carriagehouse.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="user-menu-item-0"
+                  >The Carriage House</a
+                >
+                <a
+                  href="suite2.html"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
+                  role="menuitem"
+                  tabindex="-1"
+                  id="user-menu-item-1"
+                  >Suite 2</a
+                >
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="text-gray-700 uppercase px-2 py-2 rounded-md text-xs font-medium"
+              aria-current="page"
+              >the location</a
+            >
+          </div>
+        </div>
+      </div>
+      <div>
+        <button></button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dropdown-wrapper" class="hidden">
+    <button onclick="toggleMenu()" class="btn-dropdown">Dropdown</button>
+    <div id="menu" class="hidden bg-green-500">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+      </ul>
+    </div>
+  </div>
+</nav>
