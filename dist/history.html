@@ -29,7 +29,19 @@
       href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Prata&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      article p {
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: left;
+        color: rgb(209 213 219);
+        line-height: 2rem;
+        margin-top: 1.5rem;
+        width: 100ch;
+      }
+    </style>
     <script src="https://unpkg.com/htmlincludejs"></script>
     <script src="htmlincludes.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -48,197 +60,525 @@
     </script>
   </head>
   <body class="bg-gray-800">
-    <!-- <include src="nav.html"></include> -->
-    <nav class="bg-white py-2">
-      <div class="mx-auto max-w-full px-2 sm:px-6 lg:px-8">
-        <div class="relative flex items-center justify-between">
-          <div
-            class="flex items-center justify-center sm:item-stretch sm:justify-start"
-          >
-            <div class="flex flex-shrink-0 items-center" id="nav-icon">
-              <a href="index.html">
-                <img
-                  class="block h-6 w-auto lg:hidden"
-                  src="images/parkers-place-circle.svg"
-                  alt="Workflow" />
-                <img
-                  class="hidden h-6 w-auto lg:block"
-                  src="images/parkers-place-circle.svg"
-                  alt="Workflow"
-              /></a>
-            </div>
-            <div class="hidden sm:ml-6 sm:block" id="main-navigation">
-              <div class="flex space-x-2">
-                <a
-                  href="index.html"
-                  class="text-gray-700 uppercase px-2 py-2 text-xs font-medium"
-                  >Home</a
-                >
-                <a
-                  href="history.html"
-                  class="text-gray-700 uppercase px-2 py-2 rounded-md text-xs font-medium"
-                  >The History</a
-                >
-                <div class="relative">
-                  <button
-                    type="button"
-                    onclick="toggleMenu('accommodations-menu')"
-                    class="text-gray-700 uppercase px-2 py-2 rounded-md text-xs font-medium"
-                    id="accommodations-menu-button"
-                  >
-                    The Accommodations
-                  </button>
-                  <div
-                    class="hidden absolute left-0 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                    role="menu"
-                    id="accommodations-menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="user-menu-button"
-                    tabindex="-1"
-                  >
-                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                    <a
-                      href="carriagehouse.html"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-0"
-                      >The Carriage House</a
-                    >
-                    <a
-                      href="suite2.html"
-                      class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
-                      role="menuitem"
-                      tabindex="-1"
-                      id="user-menu-item-1"
-                      >Suite 2</a
-                    >
-                  </div>
-                </div>
-
-                <a
-                  href="#"
-                  disabled
-                  class="text-gray-400 uppercase px-2 py-2 rounded-md text-xs font-medium"
-                  >the location</a
-                >
-              </div>
-            </div>
-          </div>
-          <div
-            class="hidden sm:flex items-center justify-between sm:item-stretch sm:justify-start sm:ml-6 text-gold-500"
-            id="social-navigation"
-          >
-            <div class="flex flex-shrink-0 items-center mr-6" id="nav-icon">
-              <a href="index.html">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                  class="h-5 w-auto fill-gold-500 hover:fill-gold-700"
-                >
-                  <path
-                    fill="fill-current"
-                    d="m279.14 288 14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
-                  />
-                </svg>
-              </a>
-            </div>
-
-            <div class="flex flex-shrink-0 items-center mr-6" id="nav-icon">
-              <a href="index.html">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 448 512"
-                  class="h-6 fill-gold-500 hover:fill-gold-700"
-                >
-                  <path
-                    fill="fill-current"
-                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                  />
-                </svg>
-              </a>
-            </div>
-            <div class="relative">
-              <button
-                onclick="toggleMenu('book-menu')"
-                class="border px-4 py-2 text-sm border-gold-500 bg-gold-100 text-black uppercase tracking-wide font-semibold hover:text-white hover:bg-gold-500"
-              >
-                Book YOUR STAY
-              </button>
-              <div
-                class="hidden absolute right-0 mt-0 w-48 origin-top-right bg-gold-500 py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
-                role="menu"
-                id="book-menu"
-                aria-orientation="vertical"
-                aria-labelledby="user-menu-button"
-                tabindex="-1"
-              >
-                <!-- Active: "bg-gray-100", Not Active: "" -->
-                <a
-                  href="carriagehouse.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-0"
-                  >The Carriage House</a
-                >
-                <a
-                  href="suite2.html"
-                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gold-100"
-                  role="menuitem"
-                  tabindex="-1"
-                  id="user-menu-item-1"
-                  >Suite 2</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
+    <header class="site-header grid-cols-3 items-center sticky top-0 z-50">
+      <include src="navigation.html"></include>
+      <div>
+        <h1 class="font-serif font-bold text-2xl sm:text-4xl text-center">
+          The History
+        </h1>
+        <p
+          class="font-sans uppercase text-center text-gray-400 tracking-widest text-[.6rem] sm:text-xs"
+        >
+          of Parker's Place, IN JEFFERSON CITY, MO.
+        </p>
       </div>
-
-      <div id="dropdown-wrapper" class="hidden">
-        <button onclick="toggleMenu()" class="btn-dropdown">Dropdown</button>
-        <div id="menu" class="hidden bg-green-500">
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <header
-      class="hidden center p-5 flex-grow-0 flex-shrink-0 sticky top-0 z-50 bg-white"
-    >
-      <h1 class="font-serif font-bold text-4xl text-center">Parker's Place</h1>
-      <p
-        class="font-sans uppercase text-center text-gray-400 tracking-widest text-xs"
-      >
-        ON HISTORIC CAPITOL AVE. IN JEFFERSON CITY, MO.
-      </p>
+      <include src="social.html"></include>
     </header>
 
-    <div><img src="images/pp_bg-1920x872.jpg" alt="" class="w-full" /></div>
+    <!-- <div><img src="images/pp_bg-1920x872.jpg" alt="" class="w-full" /></div> -->
     <main class="flex flex-col md:flex-row p-10">
       <div class="w-full md:w-1/2 mx-auto">
-        <p class="font-serif text-left text-gray-300 leading-8">
-          Parker's Place is the best place to stay to discover Jefferson City
-          and all it has to offer! This beautiful home overlooks the oldest
-          state prison west of the Mississippi River and much of Missouri's
-          capitol city. It's now a destination for families and friends to
-          connect with each other and the fascinating history of Lester S.
-          Parker and his wonderful red brick neo-classical mansion, built in
-          1905 with prison labor. The central location is in walking distance of
-          the State Capitol and the old Missouri State Prison, which both offer
-          tours; shopping and dining in downtown Jefferson City; and the Katy
-          Trail, a popular hiking and cycling trail with rental bikes available.
-          <br /><br />
+        <article>
+          <h1 class="text-white font-serif font-bold text-2xl sm:text-4xl">
+            Lester Shepard Parker
+          </h1>
 
-          Enjoy your stay at Parker's Place, with all its intriguing stories, at
-          the historic crossroads of Capitol Avenue and Lafayette Street in
-          Missouri's capitol city. Contact us today to book your getaway.
-        </p>
+          <p>
+            Lester Shepard Parker (1860-1925) Massachusetts, Kentucky, Illinois,
+            Maryland, Kansas, Minnesota, Missouri, Michigan.
+          </p>
+
+          <p>
+            The following information is provided by Fred W. McCraw, art writer
+            from Kansas City.
+          </p>
+
+          <p>
+            Lester Shepard Parker was born in 1860 in Worcester, Massachusetts.
+            When he was age three, his family moved to Lexington, Kentucky for
+            five years and from there to Chicago in 1868. His father, George C.
+            Parker, worked there in a shoe manufacturing company (Phelps, Dodge
+            and Palmer). By 1871 the Parkers were living next door to a Mrs.
+            O’Leary—she of cow-keeping fame. From being her nearest downwind
+            neighbor, the Parker family was the first among scores of families
+            to see their home burned to the ground in the great Chicago fire of
+            that year.
+          </p>
+          <p>
+            After the fire, all or part of the family appear to have relocated
+            to Worcester to regroup. Lester, at least, was there attending
+            Worcester Academy in his mid-teen years before going on to graduate
+            in 1879 “with a background in Law” from Baltimore City College (a
+            then combination Prep School and Junior College) in Maryland. At age
+            19, he then followed the dictum popularized by Horace Greeley and
+            headed west to what in his birth year had been “Kansas Territory.”
+            He settled in the mid-state Salina area where he married, had two
+            children and for fifteen years prospered as a lawyer, teacher, and
+            rancher raising sheep and cattle.
+          </p>
+          <p>
+            Lester excelled in law, painting, poetry, music composition and
+            business—as much or more a Renaissance man as any other of his North
+            American contemporaries. He was best known as a turn-of-the-century
+            lawyer/industrialist and a close adviser to several Missouri
+            governors. But he also was a well-known writer of history and
+            poetry, a composer of ragtime and other popular music and an
+            accomplished artist by avocation working skillfully and quite
+            professionally over many years in both oils and watercolors, and
+            with diverse subjects.
+          </p>
+          <p>
+            In 1894, after 15 years in Kansas, Lester moved for one year to St.
+            Paul, Minnesota. He had arranged to work there as a foreman in a
+            shoe manufacturing company—presumably as an apprenticeship for
+            founding one such company of his own in Jefferson City, Missouri,
+            which he did soon after leaving Minnesota. He did live briefly in
+            Chicago to arrange financing before settling permanently in
+            Jefferson City where he founded L.S. Parker Shoe Company. In later
+            years he often summered in South Haven, Michigan where he owned a
+            resort. He also had mining and cotton interests in southwest and
+            southeast Missouri respectively, and owned, among other business
+            interests, a telephone company. Possibly it was in his Kansas or
+            mid-Jefferson City years that he managed to study art in Paris at
+            the Acadamie Colarossi. He was there, but the years of his training
+            are, so far, elusive.
+          </p>
+          <p>
+            Some elements of French Impressionist techniques are in his work.
+            One of his most notable achievements came when the Missouri Capitol
+            building burned and was replaced in the 1911-22 period. Mr. Parker
+            is credited with being the person most responsible for filling the
+            new Capitol Building with mural masterworks by celebrated and/or
+            promising early 20th century American artists, including one or more
+            of the famed “Taos 10” or “Taos Founders.”
+          </p>
+          <p>
+            In a brief to the National Park Service, Jane Rodes Beetem wrote:
+            “After the Capitol was destroyed by fire in 1911, a massive
+            rebuilding effort was launched. To supervise decoration of the new
+            Capitol in 1917, Governor Gardner appointed a five member Capitol
+            Decoration Commission. In 1922, an advisory committee was formed to
+            work with the Capitol Decoration Commission. The advisers included
+            Governor A.M. Hyde, Lieutenant Governor Hiram Lloyd, Senator William
+            Irwin, Lester S. Parker, and Hugh Stephens, for many years publisher
+            of the Jefferson City Tribune. Parker was included on the committee
+            due to his interest in and appreciation of the arts, his interest in
+            the Capitol, and his reputation as a local artist.”
+          </p>
+          <p>
+            In his 1925 eulogy to Lester Parker, his friend and publisher, Hugh
+            Stephens, remarked: “To him is due the credit for having rescued
+            from defeat the movement to decorate the state capitol when that
+            work had just started and was about to be given up. Single-handed he
+            began a thorough study of the great purpose and aim of its
+            decorations, and as a result we have in this city a building on
+            which there has been expended for art nearly a million dollars,
+            making it perhaps the greatest public building in that respect,
+            within the bounds of the United States, except the Library of
+            Congress. He was the first to deliver lectures on the subject here
+            and elsewhere. He wrote a book describing the works of art, which
+            book he published at his own expense. This community will never
+            cease to draw dividends from the thousands of visitors who will come
+            here as a result of the interest which he created.”
+          </p>
+          <p>
+            Lester Parker was long a lay leader in the Baptist Church near his
+            home, where he counseled and assisted in its work and growth. He
+            died from a post-operative blood-clot on July 25, 1925 following
+            surgery at the Mayo Clinic hospital in Rochester, Minnesota.
+          </p>
+          <p>
+            Writer's Note: A significant source for the above biographical
+            sketch has been Section 8 (Pages 14-19) from a National Register of
+            Historic Places document filed with the National Park Service (NPS).
+            This United States Department of the Interior Registration Form
+            10-900 was signed and filed April 11, 2000. That form was prepared
+            as an application for “The Parker, Lester S. and Missouri "Zue"
+            Gordon House, Cole County. Missouri” to be designated a “National
+            Historic Place.” It was written by Jane Rodes Beetem and her Editor,
+            Roger Maserang. It is officially titled: NPS Registration Form
+            10-900-a (8-86).
+          </p>
+          <p>
+            The lengthy biography of Lester Parker in that document was included
+            to provide additional non-architectural reasons for preserving his
+            Jefferson City mansion, since Mt. Parker was demonstrably very
+            important in Missouri's early history. Below is that full biography
+          </p>
+          <p>
+            (Criterion B - Association with Life of a Significant Person: ) It
+            was through shoe manufacturing that Lester Shepard Parker earned the
+            wealth that enabled his fine residence to be constructed. Parker's
+            father had worked for a shoe manufacturer in Chicago when Lester was
+            young. Unfortunately for the Parkers, according to a biographical
+            sketch in The Illustrated Sketch Book and Directory of Jefferson
+            City and Cole County,1900, they lived next door to Mrs. O'Leary and
+            her illustrious cow, and their house was the first one consumed by
+            the Great Chicago Fire of 1871.
+          </p>
+          <p>
+            “After graduation from college in 1879” Parker moved to Kansas where
+            he practiced law, taught school and farmed, raising sheep and
+            cattle. In 1894 he moved to St. Paul, Minnesota, becoming foreman of
+            the Kellogg & Johnson shoe factory. One year later in Chicago he
+            became associated with C. M. Henderson & Co., organizing the
+            Jefferson Shoe Company for the manufacture of shoes in Jefferson
+            City, Missouri.
+          </p>
+          <p>
+            Parker moved to Jefferson City in 1895, where he was superintendent
+            and general manager of the Jefferson Shoe Company. Just before
+            Henderson's death in 1895, Parker disposed of his interest in that
+            firm and organized the L. S. Parker Shoe Co., which brought him to
+            the forefront of local shoe manufacturing. The incentive for
+            manufacturers such as Parker to relocate in Jefferson City was the
+            potential profits from using the Missouri State Penitentiary
+            buildings, grounds, and inmates. A combination of cheap labor, low
+            taxes and rental rates, and competitive freight rates added up to an
+            attractive package and a highly successful operation. From the
+            state's perspective, this use of the penitentiary was primarily a
+            means of making it a more self-supporting institution.
+          </p>
+          <p>
+            A look at previous attempts to utilize inmates as a cheap labor
+            source will help explain how the new system came about. The State of
+            Missouri had since 1839 been concerned with the cost of maintaining
+            the penitentiary. Between 1839 and 1853, various attempts were made
+            to lease the penitentiary and absolve the state from all costs of
+            its operation. The lessee would, in exchange for use of the prison
+            grounds, buildings and inmates, be responsible for all prison
+            operations, including food, clothing and shelter for the inmates. In
+            the early years, the lessees frequently worked inmates outside the
+            prison walls, advertising that prison labor was available for such
+            things as construction projects, landscaping and groundskeeping,
+            blacksmithing, and house and sign painting. Lax supervision,
+            however, led to frequent escapes.
+          </p>
+          <p>
+            Townspeople were distressed not only by the number of prisoners
+            working among them and fleeing through town, but that inmates
+            working for such low wages were taking jobs from local workers.
+            Gross abuses of prison labor and supplies after 1853, while under
+            state management, prompted a return to the lease system from 1873 to
+            1875. By the late 1870s, Missouri was prepared to try a different
+            approach to making the penitentiary self-supporting.
+          </p>
+          <p>
+            Governor John S. Phelps' 1879 address to the General Assembly
+            recounted the problems and failures of the lease system, and
+            remarked on attempts to operate the prison as a manufacturing
+            facility run by the prison warden. The governor's recommendation was
+            a middle approach in which the facility would not be leased, but
+            neither would prison officers serve as business managers for
+            manufacturing. Instead, expansion of private industry within the
+            prison was favored and the governor's recommendation was carried
+            out. Under this arrangement, the state constructed factory buildings
+            and then negotiated with manufacturers for multi-year contracts
+            specifying terms for the use of prison labor.
+          </p>
+          <p>
+            In 1873, shoe manufacturer George Corning testified to the new
+            system's success. His operation employed 70 inmates at a cost of 40
+            cents each per day, he said, from which he generated an annual
+            profit of $5,000. He said the prospects of earning such a
+            substantial profit were what convinced him to relocate from St.
+            Louis to Jefferson City.
+          </p>
+          <p>
+            The 1898 Sanbom Map indicates that the following private
+            manufacturers were operating within the prison walls at that time:
+            Jacob Strauss Saddlery Co., J. S. Sullivan Saddletree Factory and
+            Lumber Yards, Hoskins- Ross Manufacturing (broom factory), Giesecke
+            Boot & Shoe Manufacturing Co., A. Priesmeyer Shoe Company, Vaughn
+            Monning Shoe Cutters, and L S. Parker Shoe Co. The L. S. Parker Shoe
+            Co. is shown on the 1898 map in a large building.
+          </p>
+          <p>
+            By 1900, the L. S. Parker Shoe Co. employed 230 people, and had a
+            backlog of orders for 65,000 pairs of shoes; by 1904, four shoe
+            manufacturers remained in operation at the prison: Bruns
+            Manufacturing Company, Giesecke-D'Oench-Hays Shoe Company, L. S.
+            Parker Shoe Company, and A. Priesmeyer Shoe Company. (15)
+          </p>
+          <p>
+            By 1908 the L. S. Parker Shoe Co. had expanded, using the same
+            building as in 1898 plus the building formerly used by the Jefferson
+            Shoe Company and a nearby former warehouse. The practice of
+            contracting for prison labor was discontinued in 1915, apparently
+            because wages had become more reasonable (higher) and an inmate's
+            work day could no longer exceed eight hours; by 1913, the warden was
+            authorized to contract for the labor of able-bodied male prisoners
+            at a rate of not less than 75-cents per day per prisoner, nearly
+            double the rate that George Corning and other early manufacturers
+            paid. Even without cheap prison labor, however, shoe manufacturing
+            remained an important factor in the Jefferson City economy. In 1936
+            it was reported that 1,131 people representing 24 per cent of the
+            total labor force was employed in the manufacture of leather goods.
+          </p>
+          <p>
+            The next available Sanborn Map, in 1923, was made after the state
+            took over the prison industries in 1915, but the former L. S. Parker
+            Shoe Co. buildings remained in place. By 1939, the building
+            initially occupied by the L. S. Parker Shoe Co. and the warehouse
+            the company occupied near the upper yard had been removed. The
+            remaining building used by the L. S. Parker Shoe Co. was burned
+            during the prison riot of 1954. This building was rebuilt using the
+            original foundation and walls. Used for a time to house prisoners
+            and known as "M" Hall, this building now serves as a prison
+            maintenance facility. The Department of Corrections identifies this
+            building as having been built in 1956, the date of reconstruction.
+            This is the only extant Parker-associated building on the prison
+            grounds but since it burned and was rebuilt, it lacks integrity and
+            the connection with Parker is not significant.
+          </p>
+          <p>
+            It was while Lester Parker lived in the house at 624 E. Capitol
+            Avenue that many, if not most, of his contributions to the community
+            were made. By 1913, some 18 years after its establishment in 1895,
+            Parker apparently had sold his shoe company and "retired." The 1913
+            city directory lists an H. M. Chandler as president of the L. S.
+            Parker Shoe Co., and in 1915 an F. M. Chandler is listed as
+            president of the company. Parker got out of the business just two
+            years before the state terminated the practice of contract labor and
+            assumed control of managing the facilities, in 1915. Once the state
+            took control of the industries operating on the prison grounds, a
+            capable administrator was needed.
+          </p>
+          <p>
+            Governor Frederick D. Gardner appointed Parker as the first
+            superintendent of industries at the penitentiary in 1915. This post
+            was considered sufficiently important that it paid an annual salary
+            of $5,000, $2,000 a year more than other state officers and the same
+            salary as the governor. For comparison purposes, in 1917 a prison
+            guard earned $1,200 per year. Among other things, the superintendent
+            was responsible for the overall operation of the prison factories.
+            Responsibilities included the purchase of materials for
+            manufacturing and the distribution of manufactured goods.
+          </p>
+          <p>
+            During Parker's term as superintendent of industries, a new statute
+            authorized payments to prisoners doing acceptable work equaling five
+            per cent of their daily earnings, or five per cent of what they
+            would have earned if working under contract to private business.
+          </p>
+          <p>
+            During Parker's tenure as superintendent, more than 1,500 prisoners
+            were engaged in the manufacture of various goods. At the beginning
+            of October 1919, the institution reported a cash balance of $61,000.
+            In the same month, Parker announced that "having established the
+            prison industries on a footing where they are a profit to the
+            State," he wished to retire. According to Parker's friend Hugh
+            Stephens: “His master stroke was the organization of the intricate
+            system of industries within the state prison. Here he turned a
+            liability into an asset and performed a great service to his state.”
+            Ex-Gov. Gardner recently stated in a public address that Lester
+            Parker contributed more to the success of his administration than
+            any other man.
+          </p>
+          <p>
+            Prior to 1900, leasing of the penitentiary and the inmates in order
+            to make the prison more self-sustaining were less than successful,
+            for various reasons. Under Lester Parker's leadership, however, it
+            appears that this goal was finally achieved. The system of prison
+            industries over which Parker originally presided continues to
+            operate to this day, making all of the license plates and renewal
+            stickers for Missouri automobiles, furniture, uniforms, and other
+            staples for purchase by state agencies.
+          </p>
+          <p>
+            Thus, Parker's contribution as first superintendent of the state
+            prison industries established a path that has been followed for
+            almost 80 years. The house at 624 E. Capitol Avenue, where Parker
+            lived from 1905 to 1925, is the largest and most tangible reminder
+            of his contributions. As no other intact buildings exist which have
+            a strong connection to Parker, this building is eligible for listing
+            in the National Register of Historic Places under Criterion B.
+          </p>
+          <p>
+            Additional Information on Lester S. Parker: Parker served in other
+            capacities, to the benefit of both Jefferson City and Missouri.
+            Residents of the community and visitors to the Capitol probably
+            would have difficulty imagining it today without the extensive
+            artwork for which it is so well known. But without Lester Parker's
+            contribution, the artwork undoubtedly would have been different and
+            perhaps there would have been less of it to appreciate.
+          </p>
+          <p>
+            After the Capitol was destroyed by fire in 1911, a massive
+            rebuilding effort was launched. To supervise decoration of the new
+            Capitol in 1917, Governor Gardner appointed a five member Capitol
+            Decoration Commission. In 1922, an advisory committee was formed to
+            work with the Capitol Decoration Commission. The advisers included
+            Governor A. M. Hyde, Lieutenant-Governor Hiram Lloyd, Senator
+            William Irwin, Hugh Stephens and Lester S. Parker. Parker was
+            included on the committee due to his interest in and appreciation of
+            the arts, his interest in the Capitol, and his reputation as a local
+            artist.
+          </p>
+          <p>
+            A report prepared by John Picard, Ph.D., D.F.A., President of the
+            Capitol Decoration Commission in 1928 characterized Parker's service
+            to the Commission and State as "invaluable." Advisor Hugh Stephens
+            was particularly complimentary. In a eulogy to Parker, Stephens
+            stated: “To him is due the credit for having rescued from defeat the
+            movement to decorate the state capitol when that work had just
+            started and was about to be given up. Single-handed he began a
+            thorough study of the great purpose and aim of its decorations, and
+            as a result we have in this city a building on which there has been
+            expended for art nearly a million dollars, making it perhaps the
+            greatest public building in that respect, within the bounds of the
+            United States, except the Library of Congress. He was the first to
+            deliver lectures on the subject here and elsewhere. He wrote a book
+            describing the works of art, which book he published at his own
+            expense. This community will never cease to draw dividends from the
+            thousands of visitors who will come here as a result of the interest
+            which he created.”
+          </p>
+          <p>
+            In 1924, a year before his death, Parker had published a book
+            describing the building's artwork: State Capitol of Missouri, with a
+            description of its construction, museum, art features, mural
+            paintings, sculptures, art windows and decorations.
+          </p>
+          <p>
+            Upon Parker's death, one headline was "WELL KNOWN CITIZEN WAS
+            RECOVERING FROM OPERATION AT MAYO BROS.; Death Was Due To Blood Clot
+            On Heart - End Came Peacefully and Unexpectedly; WIDELY KNOWN CRITIC
+            AND ART AUTHORITY; Remains Will Arrive In Jefferson City At 3
+            o'clock Monday Morning." The accompanying article describes Parker's
+            connection with the Capitol: "In his connection with the Capitol
+            Decorating Commission Mr. Parker became known to a large number of
+            Missourians who were privileged to listen to his explanation of the
+            paintings and decoration in the State Capitol. While Lester Parker
+            was long remembered for his role in decoration of the Capitol, his
+            residence remains the building most connected with his life.
+          </p>
+          <p>
+            An avocational artist, Parker enjoyed painting scenes from his
+            travels abroad in both oils and watercolors. He gave 100 pieces of
+            his art collection to the First Baptist Church and one of his
+            personal works remains on display there today. Parker's son, Lester
+            S. Parker Jr., recently donated two of his father's works to the
+            Cole County Historical Society, where they may be viewed in the
+            museum and in the society's office. Several of Parker's works are
+            also displayed in local homes.
+          </p>
+          <p>
+            Parker also wrote and published poems and songs, such as Come Back
+            My Honey to Missouri, touted by some as a possible candidate for
+            state song. He published a book of poems, titled Nancy Macintyre, a
+            tale of the prairies, in 1912. The 1900 Sketch Book states that
+            Parker's musical compositions were being printed by the Tribune
+            Publishing Company of Jefferson City at the time of the Sketch
+            Book's publication. Song titles included Rag Time Rastus, the
+            Whistler, The Pickaninny's Lullaby, and Parker's most popular song,
+            People Will Talk. Two stanzas of this song are published in the
+            Sketch Book.
+          </p>
+          <p>
+            To celebrate the successful end of fund-raising for the new First
+            Baptist Church in 1925, Parker wrote six "victory campaign hymns" to
+            the tunes of popular church hymns, which were published in the
+            program folder for Victory Sunday, July 26, 1925. Parker was a
+            strong supporter of the First Baptist Church, located on Capitol
+            Avenue just three blocks from his home. He served as trustee,
+            superintendent and teacher of the Sunday school, and a member of the
+            church choir. Parker served on the board administrating Baptist
+            state missions and Sunday schools, and served two terms as
+            vice-president of the State B.Y.P.U.
+          </p>
+          <p>
+            A portrait of Lester Shepard Parker and one of his own paintings are
+            displayed in the church as reminders of his talent and dedication.
+            The portrait was painted by Ralph Chesley Ott of St. Louis, who also
+            had been engaged by the Capitol Decoration Committee to paint
+            portraits of several Missouri governors. In 1926 Parker's portrait,
+            an oil painting, was presented to the church to be hung over the
+            fireplace in the Lester Parker Memorial Room which was redecorated
+            by the Parker family following his death.
+          </p>
+          <p>
+            The circa 1920s church, listed on the National Register of Historic
+            Places, was demolished in the early 1980s to clear the site for a
+            new sanctuary. This new building burned but was quickly replaced by
+            the congregation, so the building standing today is the third
+            sanctuary constructed since the death of Lester Parker. The portrait
+            of Parker and his paintings escaped the fire because at some point
+            they had been placed in storage, apparently under the supervision of
+            Parker's friend Hugh Stephens. The disposition of the other
+            paintings upon Stephens' death is undetermined.
+          </p>
+          <p>
+            In addition to the shoe factory, Parker had various other business
+            interests including mining near Joplin, Missouri, a summer resort in
+            South Haven, Michigan and growing cotton in the Missouri bootheel.
+          </p>
+          <p>
+            He was president of the Economy Stay Company and the Capitol
+            Telephone Company. Although Parker died before Capitol Telephone
+            Company moved into its new building at 319 Madison Street in 1930,
+            his investment in the company helped keep it afloat. According to
+            one writer, Parker's acquisition of all minority shares of the
+            Capitol Telephone Company was instrumental in the struggling firm's
+            efforts to successfully compete against two rival telephone
+            companies.
+          </p>
+          <p>
+            Parker was well respected and successful, but he and his family seem
+            to have had an abundance of misfortune. As a youth, the Parker
+            family lived in Chicago next door to Mrs. O'Leary and her now famous
+            cow and suffered the consequences, losing their home in the ensuing
+            blaze. His first two wives died after only a few years of marriage.
+            In 1882 he married Katie Lockard, mother of his daughter Gracie and
+            son Dan. Katie died in November 1890 and another son, Clyde, died at
+            the age of three. In May 1895 Parker married M. Sue O'Bannon,
+            daughter of a former state legislator from Cass County. Sue had two
+            children, Alice and Lester Parker, Jr. before she died in September
+            1899.
+          </p>
+          <p>
+            Parker married a third time in 1901. His third wife, with whom he
+            shared the Parker House at 624 E. Capitol Avenue, was Missouri
+            Gordon Parker, nicknamed "Zue." Lester Parker was active until his
+            death in 1925 following surgery at Mayo Brothers Hospital.
+          </p>
+          <p>
+            Tragedy followed his wife Zue and daughter Rachel as well. Educated
+            at Stephens College in Columbia, Missouri and at Mount Holyoke
+            College in Massachusetts, she became vice-president of the telephone
+            company her husband had worked to establish. But in 1931, Zue and
+            her only daughter, Rachel, were killed in a car crash near
+            Independence, Missouri.
+          </p>
+          <p>_____________________________________________________</p>
+          <p>
+            Writer’s Ancillary Note on the Chicago fire of 1871: This from an
+            internet site: http://www.mamalisa.com/?t=es&p=2353&c=23
+          </p>
+          <p>
+            The story behind the song: “Mrs. Catherine O’Leary lived in Chicago,
+            Illinois at the time of the Great Chicago Fire of 1871. It was
+            alleged that a fire started in her barn on the evening of October 8,
+            1871 and then spread to the whole city. It turns out that Michael
+            Ahern, a Chicago Daily Tribune reporter, made up the tale to have a
+            colorful story to tell his newspaper.
+          </p>
+          <p>
+            In 1997, the Chicago City Council passed a resolution exonerating
+            Mrs. O'Leary and her cow!”
+          </p>
+          <p>
+            This does not mean to say there was no fire nor that it did not
+            commence on her property and in her barn. It merely says the cow is
+            relieved of being responsible for it and Mrs. O'Leary too; and there
+            may or may not have been a lantern involved. The issue of how it
+            started is simply not satisfied or addressed in the Council
+            exoneration and, indeed, may never be known. Nonetheless, all
+            theories—and there are a half dozen good ones—agree on the one fact
+            that the fire started in the O'Leary's barn, exactly as the Parkers
+            have said.
+          </p>
+        </article>
         <h2 class="text-xl text-gold-500 font-bold mt-8">
           View our accomodations
         </h2>
